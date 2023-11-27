@@ -1,0 +1,45 @@
+<!--
+Author: Daniel Krutz
+Description: The purpose of this document is to convey example usage for a simple API that provides a random number.
+- Read random number
+- Read weather for an external client
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> REST Client - Random Value </title>
+    <script type='text/javascript'>
+    
+
+      /* create the code that will read the value provided by the API. */
+      window.onload = function() {
+        url = location.href.substring(0, location.href.lastIndexOf("/")) + "/RandomAPI.php?action=get_RandomValue"; // Build the URL string
+
+        // build an xhr to request the info
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+
+        xhr.onload = function() {
+
+        const response = JSON.parse(xhr.responseText);
+        document.getElementById("randomValue").innerHTML=response;
+      }
+
+        xhr.send();
+      }
+    </script>
+  </head>
+
+
+  <!-- 
+    Now show the page of the body
+  -->
+  <body>
+    <h1>REST Client: Random Number Example</h1>
+    <p>This page returns the random value as provided by the `black box' API.</p>
+
+    The random value is: <div id='randomValue' />
+
+  </body>
+</html>
