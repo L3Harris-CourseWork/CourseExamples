@@ -6,7 +6,22 @@
       var loadDataForUser = function() {
         // build the url for the individual person (uses template strings)
        // const url = `http://www.se.rit.edu/~dkrutz/swen-344/REST/RESTAPI.php?action=get_person&id=${this.id}`;
-        const url = `https://test3-4tdj.onrender.com/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+//        const url = `https://test3-4tdj.onrender.com/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+
+
+//        const url = `http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php';
+//        const url = `http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+
+
+      url = location.href.substring(0, location.href.lastIndexOf("/"));
+      url = url + "/RESTAPI.php?action=get_person&id=";
+      url = url + this.id;
+//     url = url + ${this.id}`;
+
+
+//      const url = `http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+//alert(url);
+//document.write(url);
 
 
         // load the data from the api
@@ -53,8 +68,16 @@
       window.onload = function() {
         // the url for the people list
         //const url = 'http://www.se.rit.edu/~dkrutz/swen-344/REST/RESTAPI.php?action=get_person_list';
-        const url = 'https://test3-4tdj.onrender.com/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person_list';
+//        const url = 'https://test3-4tdj.onrender.com/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person_list';
         
+    //  const url = 'http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person_list';
+//alert(document.URL);
+      url = location.href.substring(0, location.href.lastIndexOf("/"));
+      url = url + "/RESTAPI.php?action=get_person_list";
+
+//      alert(url);
+//const url = document.URL + 'http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person_list';
+
 
         // build an xhr to request the info
         const xhr = new XMLHttpRequest();
