@@ -2,43 +2,43 @@
   "people": [
     {
       "name": "Alice",
-      "favorite_color": "Blue"
+      "favorite": "Blue"
     },
     {
       "name": "Bob",
-      "favorite_color": "Green"
+      "favorite": "Green"
     },
     {
       "name": "Charlie",
-      "favorite_color": "Red"
+      "favorite": "Red"
     },
     {
       "name": "David",
-      "favorite_color": "Yellow"
+      "favorite": "Yellow"
     },
     {
       "name": "Eva",
-      "favorite_color": "Purple"
+      "favorite": "Purple"
     },
     {
       "name": "Frank",
-      "favorite_color": "Orange"
+      "favorite": "Orange"
     },
     {
       "name": "Grace",
-      "favorite_color": "Pink"
+      "favorite": "Pink"
     },
     {
       "name": "Henry",
-      "favorite_color": "Brown"
+      "favorite": "Brown"
     },
     {
       "name": "Ivy",
-      "favorite_color": "Turquoise"
+      "favorite": "Turquoise"
     },
     {
       "name": "Jack",
-      "favorite_color": "Black"
+      "favorite": "Black"
     }
   ]
 }

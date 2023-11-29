@@ -2,43 +2,43 @@
   "people": [
     {
       "name": "Alice",
-      "favorite_food": "Pizza"
+      "favorite": "Pizza"
     },
     {
       "name": "Bob",
-      "favorite_food": "Sushi"
+      "favorite": "Sushi"
     },
     {
       "name": "Charlie",
-      "favorite_food": "Chocolate Cake"
+      "favorite": "Chocolate Cake"
     },
     {
       "name": "David",
-      "favorite_food": "Tacos"
+      "favorite": "Tacos"
     },
     {
       "name": "Eva",
-      "favorite_food": "Ice Cream"
+      "favorite": "Ice Cream"
     },
     {
       "name": "Frank",
-      "favorite_food": "Pasta"
+      "favorite": "Pasta"
     },
     {
       "name": "Grace",
-      "favorite_food": "Burger"
+      "favorite": "Burger"
     },
     {
       "name": "Henry",
-      "favorite_food": "Salad"
+      "favorite": "Salad"
     },
     {
       "name": "Ivy",
-      "favorite_food": "Steak"
+      "favorite": "Steak"
     },
     {
       "name": "Jack",
-      "favorite_food": "Sushi"
+      "favorite": "Sushi"
     }
   ]
 }

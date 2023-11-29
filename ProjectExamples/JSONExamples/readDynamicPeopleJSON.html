@@ -16,7 +16,38 @@ function generateRandomNumber() {
     //document.getElementById("output").innerHTML = "Random Number: " + randomNumber;
     return Math.floor(Math.random() * 3) + 1;
 }
+
+
+// Get the name of the json file that should be requested from the API file
+//  Pass in a random number
+function getPeopleInformation(val){
+    alert(val);
+}
+
+
+function loadPeopleInformation(){
+
+
+//getPeopleInformation(2);
+
+
+// Use JavaScript to fetch data from the PHP file
+fetch('readFoodJSON-example-API.php&id=1')
+    .then(response => response.json())
+    .then(data => {
+        // Display the key-value pairs on the HTML page
+        let output = document.getElementById('output');
+        output.innerHTML = '<h2>Key-Value Pairs</h2>';
+        
+        for (const [name, food] of Object.entries(data)) {
+            output.innerHTML += `<p><strong>${name}:</strong> ${food}</p>`;
+        }
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
 </script>
+
 
 
     
@@ -32,36 +63,18 @@ function generateRandomNumber() {
 <div id="output"></div>
 
 <script>
-// Use JavaScript to fetch data from the PHP file
-fetch('readFoodJSON-example-API.php')
-    .then(response => response.json())
-    .then(data => {
-        // Display the key-value pairs on the HTML page
-        let output = document.getElementById('output');
-        output.innerHTML = '<h2>Key-Value Pairs</h2>';
-        
-        for (const [name, food] of Object.entries(data)) {
-            output.innerHTML += `<p><strong>${name}:</strong> ${food}</p>`;
-        }
-    })
-    .catch(error => console.error('Error fetching data:', error));
+
 </script>
-
-
-
 
 <!-- User entered -->
 
-
-
+<!--
 <button onclick="generateRandomNumber()">Generate Random Number</button>
 <button onclick="alert(generateRandomNumber())">Generate Random Number</button>
-
+-->
+<button onclick="loadPeopleInformation()">Load People Data</button>
 
 <p id="output"></p>
-
-
-
 
 
 </body>
