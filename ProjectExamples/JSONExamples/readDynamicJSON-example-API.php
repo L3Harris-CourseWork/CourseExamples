@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -9,25 +10,30 @@ function get_file_by_id($id)
   // Build JSON array to create the necessary data structure
   switch ($id){
     case 1:
-      $person_info = array("person_name" => "Jim Kelly", "person_age" => "12", "favorite_movie" => "Saving Private Ryan"); 
+      $jsonData = file_get_contents('InputJSONFiles/ExampleFile1.json');
       break;
     case 2:
-      $person_info = array("person_name" => "Jim Boheim", "person_age" => "44", "favorite_movie" => "Jurrasic Park");
+      $jsonData = file_get_contents('InputJSONFiles/ExampleFile2.json');
       break;
     case 3:
-      $person_info = array("person_name" => "Michael Jordan", "person_age" => "45", "favorite_movie" => "Goodfellas");
-      break;
-    case 4:
-      $person_info = array("person_name" => "Carmelo Anthony", "person_age" => "44", "favorite_movie" => "Sound of Music");
+      $jsonData = file_get_contents('InputJSONFiles/ExampleFile3.json');
       break;
   }
 
-  return $file_info;
+  return $jsonData;
 }
+
+//echo $variableName;
+
+
+
+
 
 
 // Read the contents of the JSON file
-$jsonData = file_get_contents('InputJSONFiles/ExampleFile1.json');
+//$jsonData = file_get_contents('InputJSONFiles/ExampleFile3.json');
+$jsonData = get_file_by_id($_GET["id"]);
+
 
 // Decode the JSON data into a PHP array
 $data = json_decode($jsonData, true);

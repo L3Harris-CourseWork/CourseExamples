@@ -27,12 +27,8 @@ function getPeopleInformation(val){
 
 function loadPeopleInformation(){
 
-
-//getPeopleInformation(2);
-
-
 // Use JavaScript to fetch data from the PHP file
-fetch('readFoodJSON-example-API.php&id=1')
+fetch('readDynamicJSON-example-API.php?id=' + generateRandomNumber())
     .then(response => response.json())
     .then(data => {
         // Display the key-value pairs on the HTML page
