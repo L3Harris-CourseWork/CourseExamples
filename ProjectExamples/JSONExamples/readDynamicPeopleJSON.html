@@ -3,71 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP JSON Data</title>
-
-
+    <title>PHP JSON Data: Output of Random 'People' Information</title>
 
 <script>
+
+// Generate a random number between 1 and 3
 function generateRandomNumber() {
-    // Generate a random number between 1 and 3
-   // var randomNumber = Math.floor(Math.random() * 3) + 1;
+    var randomNumber = Math.floor(Math.random() * 3) + 1;
 
     // Display the random number
-    //document.getElementById("output").innerHTML = "Random Number: " + randomNumber;
-    return Math.floor(Math.random() * 3) + 1;
+    document.getElementById('randValue').innerHTML = "The random value is " + randomNumber;
+    return randomNumber;
 }
 
 
-// Get the name of the json file that should be requested from the API file
-//  Pass in a random number
-function getPeopleInformation(val){
-    alert(val);
-}
-
-
+// Place the people's information onto the screen
 function loadPeopleInformation(){
 
 // Use JavaScript to fetch data from the PHP file
-fetch('readDynamicJSON-example-API.php?id=' + generateRandomNumber())
+fetch('readDynamicJSON-example-API.php?id=' + generateRandomNumber()) //Read the API using the random value as input for randomly loading information
     .then(response => response.json())
     .then(data => {
         // Display the key-value pairs on the HTML page
         let output = document.getElementById('output');
         output.innerHTML = '<h2>Key-Value Pairs</h2>';
         
-        for (const [name, food] of Object.entries(data)) {
-            output.innerHTML += `<p><strong>${name}:</strong> ${food}</p>`;
+        for (const [name, favItem] of Object.entries(data)) {
+            output.innerHTML += `<p><strong>${name}:</strong> ${favItem}</p>`;
         }
     })
     .catch(error => console.error('Error fetching data:', error));
 }
-
 </script>
 
-
-
-    
 </head>
 <body>
 
-<h1>Key-Value Pairs from PHP</h1>
+<h1>Output Values</h1>
 
+<p>This example takes in one of several JSON files as input and displays their content on the webpage. The information being dynamically loaded is derived from a random value that is automatically generated and passed through the API. </p>
 
-<p>This example takes in one of several JSON files as input and displays their content on the webpage.</p>
-
+<div id="randValue"></div
 
 <div id="output"></div>
 
-<script>
+<br />
 
-</script>
-
-<!-- User entered -->
-
-<!--
-<button onclick="generateRandomNumber()">Generate Random Number</button>
-<button onclick="alert(generateRandomNumber())">Generate Random Number</button>
--->
 <button onclick="loadPeopleInformation()">Load People Data</button>
 
 <p id="output"></p>

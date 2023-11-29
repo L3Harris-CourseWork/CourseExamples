@@ -8,6 +8,7 @@ function get_file_by_id($id)
 
   // Normally this info would be pulled from a database.
   // Build JSON array to create the necessary data structure
+  // There is probably a better way to dynamically build the File String using the input value, but this is simple and it works.
   switch ($id){
     case 1:
       $jsonData = file_get_contents('InputJSONFiles/ExampleFile1.json');
@@ -23,12 +24,6 @@ function get_file_by_id($id)
   return $jsonData;
 }
 
-//echo $variableName;
-
-
-
-
-
 
 // Read the contents of the JSON file
 //$jsonData = file_get_contents('InputJSONFiles/ExampleFile3.json');
@@ -43,7 +38,7 @@ if ($data === null) {
     die('Error decoding JSON data.');
 }
 
-// Create an associative array with names as keys and favorite foods as values
+// Create an associative array with names as keys and favorite items as values
 $keyValueArray = [];
 foreach ($data['people'] as $person) {
     $keyValueArray[$person['name']] = $person['favorite'];
@@ -52,7 +47,6 @@ foreach ($data['people'] as $person) {
 // Output the associative array as JSON
 header('Content-Type: application/json');
 echo json_encode($keyValueArray);
-
 
 ?>
 
