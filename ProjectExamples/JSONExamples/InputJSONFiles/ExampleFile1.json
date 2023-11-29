@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "name": "Alice",
+      "favorite_movie": "Inception"
+    },
+    {
+      "name": "Bob",
+      "favorite_movie": "The Shawshank Redemption"
+    },
+    {
+      "name": "Charlie",
+      "favorite_movie": "Pulp Fiction"
+    },
+    {
+      "name": "David",
+      "favorite_movie": "The Godfather"
+    },
+    {
+      "name": "Eva",
+      "favorite_movie": "The Dark Knight"
+    },
+    {
+      "name": "Frank",
+      "favorite_movie": "Forrest Gump"
+    },
+    {
+      "name": "Grace",
+      "favorite_movie": "Titanic"
+    },
+    {
+      "name": "Henry",
+      "favorite_movie": "The Matrix"
+    },
+    {
+      "name": "Ivy",
+      "favorite_movie": "Jurassic Park"
+    },
+    {
+      "name": "Jack",
+      "favorite_movie": "Star Wars: Episode IV - A New Hope"
+    }
+  ]
+}

@@ -10,10 +10,6 @@
       url = url + "/RESTAPI.php?action=get_person&id=";
       url = url + this.id;
 
-//alert(url);
-//document.write(url);
-
-
         // load the data from the api
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -103,6 +99,18 @@
 
 <p>Please click on a person's name for attributes about that person.</p>
     <ul id='people-list'></ul>
-    <div id='person-info' />
+
+
+    <div id='person-info'></div>
+
+<!--
+<table border ="0">
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+</table>
+-->
+
+
   </body>
 </html>

@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "name": "Alice",
+      "favorite_food": "Pizza"
+    },
+    {
+      "name": "Bob",
+      "favorite_food": "Sushi"
+    },
+    {
+      "name": "Charlie",
+      "favorite_food": "Chocolate Cake"
+    },
+    {
+      "name": "David",
+      "favorite_food": "Tacos"
+    },
+    {
+      "name": "Eva",
+      "favorite_food": "Ice Cream"
+    },
+    {
+      "name": "Frank",
+      "favorite_food": "Pasta"
+    },
+    {
+      "name": "Grace",
+      "favorite_food": "Burger"
+    },
+    {
+      "name": "Henry",
+      "favorite_food": "Salad"
+    },
+    {
+      "name": "Ivy",
+      "favorite_food": "Steak"
+    },
+    {
+      "name": "Jack",
+      "favorite_food": "Sushi"
+    }
+  ]
+}

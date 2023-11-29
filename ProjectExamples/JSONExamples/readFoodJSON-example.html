@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP JSON Data</title>
+</head>
+<body>
+
+<h1>Key-Value Pairs from PHP</h1>
+
+<div id="output"></div>
+
+<script>
+// Use JavaScript to fetch data from the PHP file
+fetch('readFoodJSON-example-API.php')
+    .then(response => response.json())
+    .then(data => {
+        // Display the key-value pairs on the HTML page
+        let output = document.getElementById('output');
+        output.innerHTML = '<h2>Key-Value Pairs</h2>';
+        
+        for (const [name, food] of Object.entries(data)) {
+            output.innerHTML += `<p><strong>${name}:</strong> ${food}</p>`;
+        }
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+
+</body>
+</html>

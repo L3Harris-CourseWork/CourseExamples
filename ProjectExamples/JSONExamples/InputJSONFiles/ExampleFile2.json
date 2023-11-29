@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "name": "Alice",
+      "favorite_color": "Blue"
+    },
+    {
+      "name": "Bob",
+      "favorite_color": "Green"
+    },
+    {
+      "name": "Charlie",
+      "favorite_color": "Red"
+    },
+    {
+      "name": "David",
+      "favorite_color": "Yellow"
+    },
+    {
+      "name": "Eva",
+      "favorite_color": "Purple"
+    },
+    {
+      "name": "Frank",
+      "favorite_color": "Orange"
+    },
+    {
+      "name": "Grace",
+      "favorite_color": "Pink"
+    },
+    {
+      "name": "Henry",
+      "favorite_color": "Brown"
+    },
+    {
+      "name": "Ivy",
+      "favorite_color": "Turquoise"
+    },
+    {
+      "name": "Jack",
+      "favorite_color": "Black"
+    }
+  ]
+}
