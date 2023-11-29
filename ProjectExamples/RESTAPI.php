@@ -29,7 +29,7 @@ function get_person_by_id($id)
 
 
 // Create the function to pull in the JSON array list
-function get_person_list($id)
+function get_person_list()
 {
   //normally this info would be pulled from a database.
   //build JSON array
