@@ -1,3 +1,12 @@
+<!--
+  Author: Daniel Krutz
+  Description: Outputs key-value information regarding several people. The decision regarding which group to show is driven by a random number.
+
+    TODO: One option is to alter the javascript random value to be driven by the external API.
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,7 @@
 
 // Generate a random number between 1 and 3
 function generateRandomNumber() {
-    var randomNumber = Math.floor(Math.random() * 3) + 1;
+    var randomNumber = Math.floor(Math.random() * 3) + 1; // 
 
     // Display the random number
     document.getElementById('randValue').innerHTML = "The random value is " + randomNumber;

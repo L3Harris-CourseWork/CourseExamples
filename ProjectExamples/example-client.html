@@ -1,3 +1,12 @@
+<!--
+  Author: Daniel Krutz
+  Description: This page automatically creates information derived from a simple API on an external page.
+
+
+-->
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +16,7 @@
         // build the url for the individual person (uses template strings)
 
       url = location.href.substring(0, location.href.lastIndexOf("/"));
-      url = url + "/RESTAPI.php?action=get_person&id=";
+      url = url + "/RESTAPI.php?action=get_person&id=";   //Call the RESTFul API. The function is called "get_person"
       url = url + this.id;
 
         // load the data from the api
@@ -55,10 +64,7 @@
         // the url for the people list
       //alert(document.URL);
       url = location.href.substring(0, location.href.lastIndexOf("/"));
-      url = url + "/RESTAPI.php?action=get_person_list";
-
-        //const url = document.URL + 'http://localhost:8000/CourseExamples/WebServices/REST/RESTAPI.php?action=get_person_list';
-
+      url = url + "/RESTAPI.php?action=get_person_list"; //Call the RESTFul API. The function is called "get_person_list"
 
         // build an xhr to request the info
         const xhr = new XMLHttpRequest();
@@ -102,6 +108,7 @@
 
     <div id='person-info'></div>
 
+<!-- An option is to focus on making the page look simpler, but this isn't really too important. -->
 <!--
 <table border ="0">
   <tr><td></td><td></td></tr>

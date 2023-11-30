@@ -1,3 +1,9 @@
+<!--
+  Author: Daniel Krutz
+  Description: Loops through an external API file that returns a list of people and their favorite foods.
+-->
+
+
 <?php
 
 // Read the contents of the JSON file

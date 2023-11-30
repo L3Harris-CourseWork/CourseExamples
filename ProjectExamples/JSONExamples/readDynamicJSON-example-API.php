@@ -1,4 +1,11 @@
 
+<!--
+  Author: Daniel Krutz
+  Description: Reads a random JSON file and then returns this information.
+
+-->
+
+
 <?php
 
 

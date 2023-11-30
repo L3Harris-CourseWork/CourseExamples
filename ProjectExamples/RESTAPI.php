@@ -7,14 +7,14 @@ function get_person_by_id($id)
 {
   $person_info = array();
 
-  // Normally this info would be pulled from a database.
+  // Normally this info would be pulled from a database or JSON file, but for simplicity asfd .
   // Build JSON array to create the necessary data structure
   switch ($id){
     case 1:
       $person_info = array("person_name" => "Jim Kelly", "person_age" => "12", "favorite_movie" => "Saving Private Ryan"); 
       break;
     case 2:
-      $person_info = array("person_name" => "Jim Boheim", "person_age" => "44", "favorite_movie" => "Jurrasic Park");
+      $person_info = array("person_name" => "Jim Boeheim", "person_age" => "44", "favorite_movie" => "Jurrasic Park");
       break;
     case 3:
       $person_info = array("person_name" => "Michael Jordan", "person_age" => "45", "favorite_movie" => "Goodfellas");

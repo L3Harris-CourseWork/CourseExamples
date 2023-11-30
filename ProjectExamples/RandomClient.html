@@ -1,8 +1,6 @@
 <!--
 Author: Daniel Krutz
 Description: The purpose of this document is to convey example usage for a simple API that provides a random number.
-- Read random number
-- Read weather for an external client
 -->
 
 <!DOCTYPE html>
@@ -14,7 +12,7 @@ Description: The purpose of this document is to convey example usage for a simpl
 
       /* create the code that will read the value provided by the API. */
       window.onload = function() {
-        url = location.href.substring(0, location.href.lastIndexOf("/")) + "/RandomAPI.php?action=get_RandomValue"; // Build the URL string
+        url = location.href.substring(0, location.href.lastIndexOf("/")) + "/RandomAPI.php?action=get_RandomValue"; // Build the URL string and call the external API that will provide the random value
 
         // build an xhr to request the info
         const xhr = new XMLHttpRequest();
