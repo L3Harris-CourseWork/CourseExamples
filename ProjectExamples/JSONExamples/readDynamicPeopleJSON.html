@@ -19,14 +19,14 @@ function generateRandomNumber() {
 
 // Place the people's information onto the screen
 function loadPeopleInformation(){
-alert("load people information");
+//alert("load people information");
 // Use JavaScript to fetch data from the PHP file
 fetch('readDynamicJSON-example-API.php?id=' + generateRandomNumber()) //Read the API using the random value as input for randomly loading information
     .then(response => response.json())
     .then(data => {
         // Display the key-value pairs on the HTML page
         let output = document.getElementById('output');
-        alert(Object.entries(data));
+//        alert(Object.entries(data));
         output.innerHTML = '<h2>Key-Value Pairs</h2>';
         
         for (const [name, favItem] of Object.entries(data)) {
