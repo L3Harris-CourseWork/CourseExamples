@@ -1,11 +1,9 @@
-<!--
-  Author: Daniel Krutz
-  Description: This page returns a simple random value that may be used by other applications.
-
--->
-
-
 <?php
+
+
+//  Author: Daniel Krutz
+//  Description: This page returns a simple random value that may be used by other applications.
+
 
 // Function that will return a random value
 function get_RandomValue()

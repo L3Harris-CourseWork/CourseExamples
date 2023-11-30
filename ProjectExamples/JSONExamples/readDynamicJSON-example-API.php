@@ -1,12 +1,11 @@
-
-<!--
-  Author: Daniel Krutz
-  Description: Reads a random JSON file and then returns this information.
-
--->
-
-
 <?php
+
+//  Author: Daniel Krutz
+//  Description: Reads a random JSON file and then returns this information.
+
+
+// >> Option is to develop an additional page or two that read this API to demonstrate one of the benefits of using shared APIs.
+
 
 
 function get_file_by_id($id)
@@ -33,7 +32,7 @@ function get_file_by_id($id)
 
 
 // Read the contents of the JSON file
-//$jsonData = file_get_contents('InputJSONFiles/ExampleFile3.json');
+//$jsonData = file_get_contents('InputJSONFiles/ExampleFile3.json'); // Leave this basic link in for testing purposes down the road if you want to point to the file directly.
 $jsonData = get_file_by_id($_GET["id"]);
 
 
@@ -56,7 +55,3 @@ header('Content-Type: application/json');
 echo json_encode($keyValueArray);
 
 ?>
-
-
-
-

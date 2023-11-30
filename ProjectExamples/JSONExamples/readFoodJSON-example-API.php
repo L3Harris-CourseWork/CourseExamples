@@ -1,10 +1,8 @@
-<!--
-  Author: Daniel Krutz
-  Description: Loops through an external API file that returns a list of people and their favorite foods.
--->
-
-
 <?php
+
+//  Author: Daniel Krutz
+//  Description: Loops through an external API file that returns a list of people and their favorite foods.
+
 
 // Read the contents of the JSON file
 $jsonData = file_get_contents('InputJSONFiles/examplePeopleFood.json');
