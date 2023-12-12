@@ -1,11 +1,46 @@
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-<head>
-	<title>Harris: Foundations of Software Engineering Landing Page</title>
+  
+  <link rel="stylesheet" type="text/css" href="https://www.se.rit.edu/resources/style-sheets/SEdepartment.css">
+  <link rel="stylesheet" type="text/css" href="swen-a.css">
 
+  
+  <script language="JavaScript">
+  var course_number = ""; // Change this to be the title of the course
+  var course_title = "Foundations of Software Engineering"; // Change this to be the title of the course
+  var section = ""; // Change this to be the title of the course
+  full_title = course_number + " " + course_title;
+  </script><!-- Do not change this -->
+  
+  <script language="JavaScript" src="https://www.se.rit.edu/resources/js/se.js"></script>
+  
+  <script language="JavaScript">
+  document.title = course_number + "" + section + " " + course_title; // No need to change this
+  </script><!-- Feel free to add custom styles if you like, but we'd rather put it in SEDepartment.css if at all possible -->
+  
 </head>
 
+
+
 <body>
+  <header>
+    <a href="http://www.se.rit.edu" alt="Software Engineering Department">
+      <img src="http://www.se.rit.edu/resources/images/se_logo.png">
+    </a>
+    <h1>
+      <script language="JavaScript">
+        document.write(document.title);
+      </script>
+  
+    </h1>
+    <div class="clear"></div>
+  </header>
+<article>
+
 <h1>Welcome</h1>
 <p>Welcome to the <b>Foundations of Software Engineering</b> landing page. Here you can find several running examples that you can leverage for the project creation. The information on this page is pulled automatically from the course <a href="https://github.com/dan7800/L3Harris-FoundationsOfSE" target="=_blank">GitHub repository</a>.</p>
 
@@ -20,7 +55,7 @@
 - Add in link to how I did this - provide a tutorial for pushing things from GT to this site.
 https://examplestaticsite.onrender.com/CourseExamples/WebServices/REST/example-client.html
 -->
-
+</article>
 
 </body>
 </html>
