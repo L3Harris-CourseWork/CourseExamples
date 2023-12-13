@@ -1,0 +1,13 @@
+[{
+    "name": "Opt1",
+    "abbreviation": "Yes"
+  },
+  {
+    "name": "Opt2",
+    "abbreviation": "No"
+  },
+  {
+    "name": "Opt3",
+    "abbreviation": "Maybe"
+  }
+]
