@@ -1,16 +1,4 @@
 
-<!--
- based on the random page API, provide the reader
-
-
-
-X) Create functions that for now just spit out the items
-x) Call the random page API that will randomly spit out functions to show - maybe have it be like a random number generator.
--) Verify that the items being output (JSON format) is correct
-
-
-
--->
 
 <?php
 
@@ -23,7 +11,7 @@ x) Call the random page API that will randomly spit out functions to show - mayb
 
 dropdown list file: inputFiles/dropdownlist.json
 
-
+- This file should only return the json files, not make any decisions. The decisions should be made by the other file.
 
  */
 
@@ -33,22 +21,35 @@ dropdown list file: inputFiles/dropdownlist.json
 // Create a basic file for just getting the contents of a JSON file
 function readJSONFile($url) {
 
-
 	$JSON = file_get_contents($url);
-
-	// echo the JSON (you can echo this to JavaScript to use it there)
-//	echo $JSON;
 
 	// You can decode it to process it in PHP
 	$data = json_decode($JSON);
 	return var_dump($data);
-
 }
 
 
 
-function getDropDownInformation() {
-	return readJSONFile("inputFiles/dropdownlist.json");
+// Simple functions to provide the 
+
+function getDropDownInformationState() {
+	return readJSONFile("inputFiles/dropDownListState.json");
+}
+
+function getDropDownInformationStooge() {
+	return readJSONFile("inputFiles/dropDownListStooge.json");
+}
+
+function getDropDownInformationMLB() {
+	return readJSONFile("inputFiles/dropDownListBaseball.json");
+}
+
+function getDropDownInformationNFL() {
+	return readJSONFile("inputFiles/dropDownListNFL.json");
+}
+
+function getDropDownInformationNHL() {
+	return readJSONFile("inputFiles/dropDownListNHL.json");
 }
 
 
@@ -57,26 +58,63 @@ function getMultChoiceInformation() {
 }
 
 
+/*
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=state
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=stooge
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=mlb
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=nfl
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=nhl
+http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=mult1
 
 
+
+>>> Next add in a few different file optoins
+
+*/
+
+
+$jsonData = get_file_by_id($_GET["id"]);
+
+// 
+function get_file_by_id($id)
+{
+  $file_info = array();
+
+  // Normally this info would be pulled from a database.
+  // Build JSON array to create the necessary data structure
+  // There is probably a better way to dynamically build the File String using the input value, but this is simple and it works.
+  switch ($id){
+    case "state":
+      $jsonData = getDropDownInformationState();
+      break;
+    case "stooge":
+      $jsonData = getDropDownInformationStooge();
+      break;
+    case "mlb":
+      $jsonData = getDropDownInformationMLB();
+      break;
+    case "nfl":
+      $jsonData = getDropDownInformationNFL();
+      break;
+    case "nhl":
+      $jsonData = getDropDownInformationNHL();
+      break;
+    case "mult1":
+      $jsonData = getMultChoiceInformation();
+      break;
+  }
+
+  return $jsonData;
+}
+
+
+
+
+//$data = json_decode($jsonData, true);
+//if ($data === null) {
+//    die('Error decoding JSON data.');
+//}
 
 ?>
 
 
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>PHP Test</title>
-    </head>
-    <body>
-
-
-
-<?php 
-//echo getDropDownInformation();
-echo getMultChoiceInformation();
-?>
-
-    </body>
-</html>

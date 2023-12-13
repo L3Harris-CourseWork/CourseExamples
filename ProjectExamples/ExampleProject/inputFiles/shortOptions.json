@@ -1,13 +1,8 @@
-[{
-    "name": "Opt1",
-    "abbreviation": "Yes"
-  },
-  {
-    "name": "Opt2",
-    "abbreviation": "No"
-  },
-  {
-    "name": "Opt3",
-    "abbreviation": "Maybe"
+{
+  "type": "OptionList",
+  "values": {
+    "opt1": "Yes",
+    "opt2": "No",
+    "opt3": "Maybe"
   }
-]
+}
