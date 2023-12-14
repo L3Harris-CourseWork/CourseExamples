@@ -1,7 +1,7 @@
 {
   "type": "DropDownList",
   "dropdownOptions": [
-    { "value": "ARI", "label": "Arizona Diamondbacks" },
+    { "value": "ARI", "label": "Arizona Diamondbacks1" },
     { "value": "ATL", "label": "Atlanta Braves" },
     { "value": "BAL", "label": "Baltimore Orioles" },
     { "value": "BOS", "label": "Boston Red Sox" },

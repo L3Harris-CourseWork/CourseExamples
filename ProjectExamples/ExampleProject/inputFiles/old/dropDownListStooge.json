@@ -1,0 +1,10 @@
+{
+  "type": "DropDownList",
+  "dropdownOptions": [
+    { "value": "Larry", "label": "Larry" },
+    { "value": "Curley", "label": "Curley" },
+    { "value": "Moe", "label": "Moe" },
+    { "value": "Shemp", "label": "Shemp" }
+  ]
+}
+
