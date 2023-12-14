@@ -4,8 +4,7 @@
 // Add in additional building criteria (paragraphs, multiple choice boxes etc....)
 
 
-//$jsonData = get_file_by_id($_GET["id"]);
-$jsonData = test($_GET["id"]);
+$jsonData = get_file_by_id($_GET["id"]);
 
 
 // Create a basic file for just getting the contents of a JSON file
@@ -13,25 +12,8 @@ function readJSONFile($url) {
 
 	$JSON = file_get_contents($url);
 
-
-//echo $JSON;
-//return $JSON;
-//echo "-----";
-	// You can decode it to process it in PHP
-//	$data = json_decode($JSON);
-//	$data = json_encode($data);
-	
-
-//echo $JSON;
-//echo "_____s";
-//	$data = $JSON;
-
-//	$data = $JSON;
-//	return var_dump($data);
-//	return $data;
 	return $JSON;
-//	return "Dan";
-
+	//return var_dump($JSON);
 }
 
 // Call the JSON files using these functions.
@@ -102,10 +84,7 @@ $rand = 1;
 // 
 function get_file_by_id($id)
 {
-   $file_info = array();
-
 	$rand = getRandomValue();
-//	echo $rand;
 
   // Normally this info would be pulled from a database.
   // Build JSON array to create the necessary data structure
@@ -118,11 +97,6 @@ function get_file_by_id($id)
       $jsonData = getMultChoiceInformation();
       break;
   }
-
-//echo  $jsonDataDan;
-//echo "hi dan";
-//echo readJSONFile("inputFiles/dropDownListState.json");  
-//return readJSONFile("inputFiles/dropDownListState.json");
   return $jsonData;
 }
 
@@ -131,16 +105,6 @@ function get_file_by_id($id)
 //if ($data === null) {
 //    die('Error decoding JSON data.');
 //}
-
-function test($id)
-{
-
-	$rand = getRandomValue();
-
-	$JSON = file_get_contents("inputFiles/dropDownListStooge.json");
-	echo $JSON;
-}
-
 
 ?>
 
