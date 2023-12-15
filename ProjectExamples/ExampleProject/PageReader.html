@@ -5,9 +5,18 @@
 <body>
 
 
+<!--
+	Optional todos
+	- Have the items dynamically loaded based on the random number generator. Therefore, everything on the page will be built dynamically.
+	- Add additional elements such as radio buttons etc...
+	- Load everything on the push of a button
+
+-->
+
+
 <h1>Example "Random" API Page</h1>
 
-<p>This page is randomly constructed using API values.</p>
+<p>This page is randomly constructed using API values. If you refresh the page, you will notice that the values in the drop down list and paragraph section randomly change. These are driven by an external API that draws the values from a random number API.</p>
 
 
 <h4>Random Dropdown information</h4>
@@ -18,6 +27,25 @@
 
 <h4>Random Paragraph Information</h4>
     <p id="msg"></p>
+
+
+<!--
+<div>
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1"><div id=opt1></label>
+
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Phone</label>
+
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Mail</label>
+</div>
+-->
+
+
+
+
+<button onclick="loadPageInformation()">Reload Page Information</button>
 </body>
 
 <script>
@@ -46,22 +74,28 @@ function loadParagraphInformation(){
 	//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
 
 	$.getJSON(url, function (data) {
-			//$.each(data.dropdownOptions, function (index, value) {
-
-				//alert(data.dropdownOptions[i].value);
-			//	$('#sel').append('<option value="' + value.value + '">' + value.label + '</option>');
-		//		i = i+1;
-		//alert(data.text);
-			//});
 		$('#msg').append(data.text);
 	});
 
+}
+
+function loadPageInformation(){
+
+	document.getElementById('msg').innerHTML = ""; // clear the paragraph information
+	document.getElementById('sel').options.length = 0;// clear the dropdown list information information
+
+	// Call functions to load the page information
+	loadDropDownInformation();
+	loadParagraphInformation();
 
 }
 
-    $(document).ready(function () {
-		loadDropDownInformation();
-		loadParagraphInformation();
-    });
+
+ $(document).ready(function () {
+		loadPageInformation(); // Call the primary function to load all of the page information
+ });
+
+
+
 </script>
 </html>
