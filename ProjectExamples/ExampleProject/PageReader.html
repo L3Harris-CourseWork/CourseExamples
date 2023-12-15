@@ -4,112 +4,64 @@
 </head>
 <body>
 
+
+<h1>Example "Random" API Page</h1>
+
+<p>This page is randomly constructed using API values.</p>
+
+
+<h4>Random Dropdown information</h4>
     <select id="sel">
         <option value="">-- Select --</option>
     </select>
 
+
+<h4>Random Paragraph Information</h4>
     <p id="msg"></p>
 </body>
 
 <script>
 
 
-function loadPeopleInformation(){
+function loadDropDownInformation(){
+	var i = 0;
 	var url = "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown";
-	//alert("load people");
+	//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
 
- $.ajax({
-        url: "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown"
-    }).then(function(data) {
-      alert(data);
-      //	alert(data.dropdownOptions[2].value);
-       $('.greeting-id').append(data.id);
-       $('.greeting-content').append(data.content);
-    });
-
-
-}
-
-
-
-    $(document).ready(function () {
-loadPeopleInformation();
-
-var i = 0;
-
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListState.json";
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListStooge.json";
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListBaseball.json";
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNFL.json";
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
-
-var url = "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown";
-//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
-
-
-
-///
-
-
-
-
-
-//////
-
-/*
-$(document).ready(function(){
-        $.getJSON(url, function(data){
-//            console.log(data.name); // Prints: Harry
- //           console.log(data.age); // Prints: 14
-        	
-        }).fail(function(){
-            console.log("An error has occurred.");
-        });
-    });
-*/
-
-
-
-
-
-////////
 	$.getJSON(url, function (data) {
-//		alert("30");
-		//$.each(data, function (index, value) {
-			//alert();
-			//alert(data.dropdownOptions[2].value);
-			//alert(value.label);
-			//alert(data.dropdownOptions[i].value);
-			//i = i+1;
-
 			$.each(data.dropdownOptions, function (index, value) {
 
 				//alert(data.dropdownOptions[i].value);
 				$('#sel').append('<option value="' + value.value + '">' + value.label + '</option>');
 				i = i+1;
 			});
+	});
 
-		//});
+}
 
-		//alert(data.dropdownOptions[0].value);
-		//alert(data.dropdownOptions[1].value);
-		//alert(data.dropdownOptions[2].value);
-		//alert(data.dropdownOptions[3].value);
-		
+
+function loadParagraphInformation(){
+//var i = 0;
+	var url = "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=paragraphInfo";
+	//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
+
+	$.getJSON(url, function (data) {
+			//$.each(data.dropdownOptions, function (index, value) {
+
+				//alert(data.dropdownOptions[i].value);
+			//	$('#sel').append('<option value="' + value.value + '">' + value.label + '</option>');
+		//		i = i+1;
+		//alert(data.text);
+			//});
+		$('#msg').append(data.text);
 	});
 
 
-/*
-$.each(data, function(i, item) {
-   alert(data[i].PageName);
-});
+}
 
-$.each(data, function(i, item) {
-  alert(item.PageName);
-});
-*/
-
-
+    $(document).ready(function () {
+		loadDropDownInformation();
+		loadParagraphInformation();
     });
 </script>
 </html>

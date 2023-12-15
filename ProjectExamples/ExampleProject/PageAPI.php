@@ -1,24 +1,14 @@
 <?php
 
-// Add additional comments
-// Add in additional building criteria (paragraphs, multiple choice boxes etc....)
-
+// The purpose of this API is to act as an intermediary to determing the json information to be returned by the example PageReader page.
 
 $jsonData = get_file_by_id($_GET["id"]);
-
 
 // Create a basic file for just getting the contents of a JSON file
 function readJSONFile($url) {
 
 	$JSON = file_get_contents($url);
-
-	//$dan= "Krutz";
-
-	echo $JSON;
-	//return $JSON;
-	//return $dan;
-	//return var_dump($JSON);
-	//return "dan";
+	echo $JSON; // return the information to be read by the reader page
 }
 
 // Call the JSON files using these functions.
@@ -61,11 +51,9 @@ function getRandomValue(){
 }
 
 
-
-
 // If it is a dropdown list, take the random value that is being passed in to randomly determine what the contents of the dropdown list should be. This will help with dynamically creating the page.
 function getDropDownInformation($rand){
-$rand = 1;
+//$rand = 1;
 	switch ($rand){
 	    case "1":
 	      $jsonData = getDropDownInformationState();
@@ -86,6 +74,50 @@ $rand = 1;
 }
 
 
+function getParagraphInfo1() {
+	return readJSONFile("inputFiles/para1.json");
+}
+
+function getParagraphInfo2() {
+	return readJSONFile("inputFiles/para2.json");
+}
+
+function getParagraphInfo3() {
+	return readJSONFile("inputFiles/para3.json");
+}
+
+function getParagraphInfo4() {
+	return readJSONFile("inputFiles/para4.json");
+}
+
+function getParagraphInfo5() {
+	return readJSONFile("inputFiles/para5.json");
+}
+
+
+function getParagraphInformation($rand){
+//$rand = 1;
+	switch ($rand){
+	    case "1":
+	      $jsonData = getParagraphInfo1();
+	      break;
+	    case "2":
+	      $jsonData = getParagraphInfo2();
+	      break;
+	    case "3":
+	      $jsonData = getParagraphInfo3();
+	      break;
+	    case "4":
+	      $jsonData = getParagraphInfo4();
+	      break;
+	    case "5":
+	      $jsonData = getParagraphInfo5();
+	      break;
+	  }
+}
+
+
+
 
 function get_file_by_id($id){
 	$rand = getRandomValue();
@@ -93,14 +125,13 @@ function get_file_by_id($id){
     case "dropdown":
       $jsonData = getDropDownInformation($rand);
       break;
+    case "paragraphInfo":
+      $jsonData = getParagraphInformation($rand);
+      break;
     case "multChoice":
       $jsonData = getMultChoiceInformation();
       break;
   	}
-  //	echo "dan";
-// 	return $jsonData;
-// 	echo "krutz";
-
 }
 
 
