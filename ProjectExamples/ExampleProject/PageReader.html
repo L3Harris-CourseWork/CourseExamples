@@ -13,8 +13,27 @@
 
 <script>
 
-    $(document).ready(function () {
 
+function loadPeopleInformation(){
+	var url = "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown";
+	//alert("load people");
+
+ $.ajax({
+        url: "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown"
+    }).then(function(data) {
+      alert(data);
+      //	alert(data.dropdownOptions[2].value);
+       $('.greeting-id').append(data.id);
+       $('.greeting-content').append(data.content);
+    });
+
+
+}
+
+
+
+    $(document).ready(function () {
+loadPeopleInformation();
 
 var i = 0;
 
@@ -25,16 +44,46 @@ var i = 0;
 //var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
 
 var url = "http://localhost:8000/ProjectExamples/ExampleProject/PageAPI.php?id=dropdown";
+//var url = "http://localhost:8000/ProjectExamples/ExampleProject/inputFiles/dropDownListNHL.json";
 
+
+
+///
+
+
+
+
+
+//////
+
+/*
+$(document).ready(function(){
+        $.getJSON(url, function(data){
+//            console.log(data.name); // Prints: Harry
+ //           console.log(data.age); // Prints: 14
+        	
+        }).fail(function(){
+            console.log("An error has occurred.");
+        });
+    });
+*/
+
+
+
+
+
+////////
 	$.getJSON(url, function (data) {
+//		alert("30");
 		//$.each(data, function (index, value) {
 			//alert();
 			//alert(data.dropdownOptions[2].value);
 			//alert(value.label);
 			//alert(data.dropdownOptions[i].value);
 			//i = i+1;
-alert("dan");
+
 			$.each(data.dropdownOptions, function (index, value) {
+
 				//alert(data.dropdownOptions[i].value);
 				$('#sel').append('<option value="' + value.value + '">' + value.label + '</option>');
 				i = i+1;

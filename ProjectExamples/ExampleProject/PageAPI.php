@@ -12,8 +12,13 @@ function readJSONFile($url) {
 
 	$JSON = file_get_contents($url);
 
-	return $JSON;
+	//$dan= "Krutz";
+
+	echo $JSON;
+	//return $JSON;
+	//return $dan;
 	//return var_dump($JSON);
+	//return "dan";
 }
 
 // Call the JSON files using these functions.
@@ -81,30 +86,23 @@ $rand = 1;
 }
 
 
-// 
-function get_file_by_id($id)
-{
-	$rand = getRandomValue();
 
-  // Normally this info would be pulled from a database.
-  // Build JSON array to create the necessary data structure
-  // There is probably a better way to dynamically build the File String using the input value, but this is simple and it works.
-  switch ($id){
+function get_file_by_id($id){
+	$rand = getRandomValue();
+ 	switch ($id){
     case "dropdown":
       $jsonData = getDropDownInformation($rand);
       break;
     case "multChoice":
       $jsonData = getMultChoiceInformation();
       break;
-  }
-  return $jsonData;
+  	}
+  //	echo "dan";
+// 	return $jsonData;
+// 	echo "krutz";
+
 }
 
-
-//$data = json_decode($jsonData, true);
-//if ($data === null) {
-//    die('Error decoding JSON data.');
-//}
 
 ?>
 
